@@ -93,12 +93,8 @@ function S_Product() {
                       {product.name}
                     </h3>
                     <div className="text-2xl font-semibold">
-                      {product.price} <br />
-                      <span className="text-2xl font-normal text-[#FF0000]">
-                        {product.price}
-                      </span>
+                      ฿ {product.price}
                     </div>
-                    <div className="text-2xl font-normal">{product.kind}</div>
                   </div>
                 </div>
               </div>

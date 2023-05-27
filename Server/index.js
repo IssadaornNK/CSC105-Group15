@@ -76,10 +76,7 @@ app.post('/Create_User', (req, res) => {
     const Name = req.body.name;
     const Email = req.body.email;
     const Password = req.body.password;
-    
-    console.log(Name)
-    console.log(Email)
-    console.log(Password)
+
     
     connection.query("INSERT INTO User (name, email, password) VALUES(?,?,?)", 
     [Name, Email, Password],
@@ -95,21 +92,36 @@ app.post('/Create_User', (req, res) => {
     );
 }) 
 
-app.delete('/User/:id', (req, res) => {
-    const id = req.params.id;
+// app.delete('/User/:id', (req, res) => {
+//     const id = req.params.id;
 
-    connection.query(`DELETE FROM User WHERE id = '${id}'`,
-    (err, result) => {
-        if (err) {
-            console.log(err);
-            res.send("Error, Please try again.");
-        }
-        else {
-            res.send("Deleted");
-        }
-    }
-    );
-}) 
+//     connection.query(`DELETE FROM User WHERE id = '${id}'`,
+//     (err, result) => {
+//         if (err) {
+//             console.log(err);
+//             res.send("Error, Please try again.");
+//         }
+//         else {
+//             res.send("Deleted");
+//         }
+//     }
+//     );
+// }) 
+
+
+app.delete('/selfDelete', (req, res) => {
+    const id = req.query.id;
+  
+    connection.query(`DELETE FROM User WHERE id = '${id}'`, (err, result) => {
+      if (err) {
+        console.log(err);
+        res.send("Error, please try again.");
+      } else {
+        res.send("Deleted");
+      }
+    });
+  });
+  
 
 app.get('/Order',(req, res)=>{
     const user = req.body.userId;

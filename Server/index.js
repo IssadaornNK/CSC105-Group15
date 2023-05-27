@@ -47,8 +47,8 @@ app.get('/CheckHello', (req, res) => {
 })
 
 // Routes [endpoint] (Got small endpoint so do all in here) -----------------------------------------------------------------------------
-app.get('/Administrator', (req, res) => {
-    connection.query("SELECT * FROM Administrator", (err, result) => {
+app.get('/User', (req, res) => {
+    connection.query("SELECT * FROM User", (err, result) => {
         if (err) {
             console.log(err);
         }
@@ -70,15 +70,15 @@ app.get('/AACs', (req, res) => {
     });
 })
 
-app.post('/Create_AAC', (req, res) => {
-    const AAC_Name = req.body.AAC_Name;
-    const AAC_Place = req.body.AAC_Place;
-    const AAC_Year = req.body.AAC_Year;
-    const AAC_Description = req.body.AAC_Description;
-    const AAC_Picture = req.body.AAC_Picture;
+app.post('/Create_User', (req, res) => {
+    const Name = req.body.name;
+    const Email = req.body.email;
+    const Password = req.body.password;
+    const Subsciption = req.body.subscription;
 
-    connection.query("INSERT INTO AACs (AAC_Name, AAC_Place, AAC_Year, AAC_Description, AAC_Picture) VALUES(?,?,?,?,?)", 
-    [AAC_Name, AAC_Place, AAC_Year, AAC_Description, AAC_Picture],
+
+    connection.query("Register (Name, Email, Password, Subscription ) VALUES(?,?,?,0)", 
+    [Name, Email, Password, Subsciption],
     (err, result) => {
         if (err) {
             console.log(err);

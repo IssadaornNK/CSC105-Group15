@@ -41,6 +41,11 @@ app.use(cors({
 
 app.use('/auth', authRouter) 
 
+// Checker backend still work ------------------------------------------
+app.get('/CheckHello', (req, res) => {
+    res.send("Hello World!!!!!!!!!!!!!!!")
+})
+
 // Routes [endpoint] (Got small endpoint so do all in here) -----------------------------------------------------------------------------
 app.get('/Administrator', (req, res) => {
     connection.query("SELECT * FROM Administrator", (err, result) => {

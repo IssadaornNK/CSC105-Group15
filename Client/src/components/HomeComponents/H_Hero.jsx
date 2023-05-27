@@ -1,21 +1,26 @@
 import React from "react";
-import BG_WaifuKitsune from "../../assets/BG_WaifuKitsune.jfif";
+import SeaBG1 from "../../assets/SeaBG1.jpg";
 
 const Home = () => {
   return (
     <div
-      name="home"
-      className="flex justify-end h-screen mt-[80] bg-cover bg-center"
-      style={{ backgroundImage: `url(${BG_WaifuKitsune})`, marginTop: "80px" }}
+      className="flex justify-center h-screen bg-center"
+      style={{
+        backgroundImage: `url(${SeaBG1})`,
+        marginTop: "80px",
+        backgroundColor: "black",
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+      }}
     >
       {/* Container */}
-      <div className="w-2/5 px-8 items-end flex flex-col justify-center h-full bg-black bg-opacity-50">
-        <h1 className="text-4xl sm:text-7xl font-bold text-[#7E38B7]">
-          Nithit Lertcharoensombat
+      <div className="px-8 items-center flex flex-col justify-center">
+        <h1 className="text-12xl sm:text-9xl font-bold text-[#fff] item-center">
+          Preserve the Sea
         </h1>
-        <h2 className="text-4xl sm:text-7xl font-bold text-[#fff]">
-          Software Developer
-        </h2>
+        <h1 className="text-12xl sm:text-9xl font-bold text-[#fff] item-center">
+          Stop the Overfishing Spree!
+        </h1>
       </div>
     </div>
   );

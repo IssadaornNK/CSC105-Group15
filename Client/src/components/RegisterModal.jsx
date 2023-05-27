@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 const RegisterModal = ({ visible, onClose }) => {
   const handleOnClose = (e) => {
@@ -48,7 +49,7 @@ const RegisterModal = ({ visible, onClose }) => {
             <div className="flex flex-row">
               <div className="mb-3 mr-20">
                 <label
-                  htmlFor="User_Name"
+                  htmlFor="name"
                   className="block text-black text-3xl font-bold mb-2"
                 >
                   Name <span className="text-red-600">*</span>
@@ -65,7 +66,7 @@ const RegisterModal = ({ visible, onClose }) => {
 
               <div className="mb-3">
                 <label
-                  htmlFor="User_Email"
+                  htmlFor="email"
                   className="block text-black text-3xl font-bold mb-2"
                 >
                   Email <span className="text-red-600">*</span>
@@ -83,7 +84,7 @@ const RegisterModal = ({ visible, onClose }) => {
 
             <div className="mb-3">
               <label
-                htmlFor="User_password"
+                htmlFor="password"
                 className="block text-black text-3xl font-bold mb-2"
               >
                 Password <span className="text-red-600">*</span>

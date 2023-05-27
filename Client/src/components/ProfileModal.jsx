@@ -14,7 +14,7 @@ const ProfileModal = ({ visible, onClose }) => {
     
     event.preventDefault(); 
     axios
-      .post("http://localhost:3000/Create_User", {
+      .post("http://localhost:3000/update_User_name/:id", {
         name: User_Name,
       }).then(() => {
         event.target.reset();

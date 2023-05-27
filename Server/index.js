@@ -7,11 +7,11 @@ const authRouter = require("./routes/authentication/endpoint_login");
 
 // Database Connection
 const connection = mysql.createConnection({
-	host: "server2.bsthun.com",
-	port: "6105",
-	user: "lab_12eyur",
-	password: "DRL1EsqIgnmfEn8c",
-	database: "lab_blank01_123mwnk",
+	host: "db.cshack.site",
+	port: "3306",
+	user: "group15",
+	password: "212227230244",
+	database: "group15",
 });
 
 connection.connect((err) => {

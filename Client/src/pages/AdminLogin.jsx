@@ -27,7 +27,7 @@ const AdminLogin = () => {
     // TODO: Perform login authentication here
     axios
       .post(
-        "http://localhost:3000/auth/login",
+        "http://localhost:3000/auth/User",
         {
           username,
           password,

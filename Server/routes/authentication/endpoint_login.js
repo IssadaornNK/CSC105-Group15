@@ -4,7 +4,7 @@ const authRouter = express.Router();
 
 authRouter.post('/User', async (req, res) => {
   const { email, password } = req.body; 
-  connection.query(`SELECT * FROM User WHERE Username = '${email}' AND Password = '${password}'`, async (err, result) => {
+  connection.query(`SELECT * FROM User WHERE email = '${email}' AND password = '${password}'`, async (err, result) => {
         if (err) {
             console.log(err);
             res.send("Error"); 

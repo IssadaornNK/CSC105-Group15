@@ -75,12 +75,16 @@ app.post('/Create_User', (req, res) => {
     const Email = req.body.email;
     const Password = req.body.password;
 
+    console.log(Name)
+    console.log(Email)
+    console.log(Password)
 
-    connection.query("INSERT INTO User(name, email, password) VALUES(?,?,?)", 
+    connection.query("INSERT INTO User (name, email, password) VALUES(?,?,?)", 
     [Name, Email, Password],
     (err, result) => {
         if (err) {
             console.log(err);
+            res.send("error 1");
         }
         else {
             res.send("Data inserted");

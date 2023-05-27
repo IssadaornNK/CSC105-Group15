@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const RegisterModal = ({ visible, onClose }) => {
   const handleOnClose = (e) => {
@@ -8,6 +9,7 @@ const RegisterModal = ({ visible, onClose }) => {
 
   if (!visible) return null;
 
+  const navigate = useNavigate();
 
   const [User_Name, setUser_Name] = useState("");
   const [User_Email, setUser_Email] = useState("");
@@ -18,9 +20,9 @@ const RegisterModal = ({ visible, onClose }) => {
     event.preventDefault(); 
     axios
       .post("http://localhost:3000/Create_User", {
-        User_Name: User_Name,
-        User_Email: User_Email,
-        User_Password: User_Password,
+        name: User_Name,
+        email: User_Email,
+        password: User_Password,
       }).then(() => {
         event.target.reset();
         
@@ -66,7 +68,6 @@ const RegisterModal = ({ visible, onClose }) => {
 
               <div className="mb-3">
                 <label
-                  htmlFor="email"
                   className="block text-black text-3xl font-bold mb-2"
                 >
                   Email <span className="text-red-600">*</span>
@@ -84,7 +85,6 @@ const RegisterModal = ({ visible, onClose }) => {
 
             <div className="mb-3">
               <label
-                htmlFor="password"
                 className="block text-black text-3xl font-bold mb-2"
               >
                 Password <span className="text-red-600">*</span>

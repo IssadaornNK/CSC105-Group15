@@ -58,27 +58,16 @@ app.get('/User', (req, res) => {
     });
 })
 
-// AACs --------------------------------------------------------------------------
-app.get('/AACs', (req, res) => {
-    connection.query("SELECT * FROM AACs", (err, result) => {
-        if (err) {
-            console.log(err);
-        }
-        else {
-            res.send(result);
-        }
-    });
-})
 
 app.post('/Create_User', (req, res) => {
     const Name = req.body.name;
     const Email = req.body.email;
     const Password = req.body.password;
-
+    
     console.log(Name)
     console.log(Email)
     console.log(Password)
-
+    
     connection.query("INSERT INTO User (name, email, password) VALUES(?,?,?)", 
     [Name, Email, Password],
     (err, result) => {
@@ -95,7 +84,7 @@ app.post('/Create_User', (req, res) => {
 
 app.delete('/AACs/:id', (req, res) => {
     const id = req.params.id;
-
+    
     connection.query(`DELETE FROM AACs WHERE id = '${id}'`,
     (err, result) => {
         if (err) {
@@ -109,15 +98,49 @@ app.delete('/AACs/:id', (req, res) => {
     );
 }) 
 
+// Product --------------------------------------------------------------------------
+app.get('/Product', (req, res) => {
+    connection.query("SELECT * FROM Product", (err, result) => {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            res.send(result);
+        }
+    });
+})
+
+app.get('/Product/item', (req, res) => {
+    const name = req.query.item_name
+    connection.query("SELECT * FROM Product WHERE name = ?", [name], (err, result) => {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            res.send(result);
+        }
+    });
+})
+
+app.get('/Product/item', (req, res) => {
+    const name = req.query.item_name
+    connection.query("SELECT * FROM Product WHERE name = ?", [name], (err, result) => {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            res.send(result);
+        }
+    });
+})
 
 
 
 
-// Projects --------------------------------------------------------------------------
 
 
 
-// -------------------------------------------------------------------------------------
+
 
 // Listen /////////////////////////////////////////////////////////////////////////////
 app.listen(port, () => {

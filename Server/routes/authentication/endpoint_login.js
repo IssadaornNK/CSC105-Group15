@@ -2,11 +2,12 @@ const express = require('express')
 const jwt = require('jsonwebtoken')
 const authRouter = express.Router();
 
-authRouter.post('/User', async (req, res) => {
+authRouter.post('/login', async (req, res) => {
   const { email, password } = req.body; 
   connection.query(`SELECT * FROM User WHERE email = '${email}' AND password = '${password}'`, async (err, result) => {
         if (err) {
             console.log(err);
+            console.log("kuy")
             res.send("Error"); 
             
         }

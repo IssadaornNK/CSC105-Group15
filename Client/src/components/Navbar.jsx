@@ -24,16 +24,16 @@ const Navbar = () => {
   }
 
   return (
-    <div className='fixed w-full h-[80px] flex top-0 justify-between items-center px-4 bg-[#fff]
+    <div className='fixed w-full h-[100px] flex top-0 justify-between items-center px-4 bg-[#fff]
      text-black font-bold shadow-md shadow-gray-400'>
       <div>
         <Link to="/">
-          <img src={Logo} alt='Logo Image' style={{ width: '150px' }} />
+          <img src={Logo} alt='Logo Image' style={{ width: '200px' }} />
         </Link>
       </div>
 
       {/* menu */}
-      <ul className='hidden md:flex text-lg'>
+      <ul className='hidden md:flex text-2xl'>
         <li className='hover:text-[#F18B24]'>
           <Link to='/'>
             Home

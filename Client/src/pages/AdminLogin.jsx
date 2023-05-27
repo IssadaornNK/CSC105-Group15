@@ -10,12 +10,12 @@ const AdminLogin = () => {
   const [showMyModal, setShowMyModal] = useState(false);
   const handleOnClose = () => setShowMyModal(false);
 
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleUsernameChange = (event) => {
-    setUsername(event.target.value);
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
   };
 
   const handlePasswordChange = (event) => {
@@ -27,9 +27,9 @@ const AdminLogin = () => {
     // TODO: Perform login authentication here
     axios
       .post(
-        "http://localhost:3000/auth/User",
+        "http://localhost:3000/auth/login",
         {
-          username,
+          email,
           password,
         },
         {
@@ -40,7 +40,7 @@ const AdminLogin = () => {
         navigate("/Admin");
         console.log(data);
       });
-    console.log("Username:", username);
+    console.log("Email:", email);
     console.log("Password:", password);
   };
 
@@ -62,23 +62,21 @@ const AdminLogin = () => {
           <form onSubmit={handleSubmit}>
             <div className="mb-4">
               <label
-                htmlFor="username"
                 className="block font-medium mb-1 text-3xl"
               >
-                Username <span className="text-red-600">*</span>
+                Email <span className="text-red-600">*</span>
               </label>
               <input
                 type="text"
-                id="username"
-                value={username}
-                onChange={handleUsernameChange}
-                placeholder="Enter username"
+                id="email"
+                value={email}
+                onChange={handleEmailChange}
+                placeholder="Enter email"
                 className="border border-gray-300 rounded px-3 py-2 w-full text-2xl"
               />
             </div>
             <div className="mb-6">
               <label
-                htmlFor="password"
                 className="block font-medium mb-1 text-3xl"
               >
                 Password <span className="text-red-600">*</span>

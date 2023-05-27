@@ -74,11 +74,10 @@ app.post('/Create_User', (req, res) => {
     const Name = req.body.name;
     const Email = req.body.email;
     const Password = req.body.password;
-    const Subsciption = req.body.subscription;
 
 
-    connection.query("Register (Name, Email, Password, Subscription ) VALUES(?,?,?,0)", 
-    [Name, Email, Password, Subsciption],
+    connection.query("Register (Name, Email, Password) VALUES(?,?,?)", 
+    [Name, Email, Password],
     (err, result) => {
         if (err) {
             console.log(err);

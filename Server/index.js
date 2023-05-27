@@ -82,14 +82,14 @@ app.post('/Create_User', (req, res) => {
     );
 }) 
 
-app.delete('/AACs/:id', (req, res) => {
+app.delete('/User/:id', (req, res) => {
     const id = req.params.id;
-    
-    connection.query(`DELETE FROM AACs WHERE id = '${id}'`,
+
+    connection.query(`DELETE FROM User WHERE id = '${id}'`,
     (err, result) => {
         if (err) {
             console.log(err);
-            res.send("Errorrr");
+            res.send("Error, Please try again.");
         }
         else {
             res.send("Deleted");

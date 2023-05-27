@@ -2,12 +2,12 @@ const express = require('express')
 const jwt = require('jsonwebtoken')
 const authRouter = express.Router();
 
-authRouter.post('/login', async (req, res) => {
-  const { username, password } = req.body; 
-  connection.query(`SELECT * FROM Administrator WHERE Username = '${username}' AND Password = '${password}'`, async (err, result) => {
+authRouter.post('/User', async (req, res) => {
+  const { email, password } = req.body; 
+  connection.query(`SELECT * FROM User WHERE Username = '${email}' AND Password = '${password}'`, async (err, result) => {
         if (err) {
             console.log(err);
-            res.send("Errorrrr"); 
+            res.send("Error"); 
             
         }
         else {
@@ -15,7 +15,7 @@ authRouter.post('/login', async (req, res) => {
             res.send('User not found!')  
           }else{
             const [ user ] = result;
-            const token = await jwt.sign({ id: user.id, username: user.Username }, "helloNe") 
+            const token = await jwt.sign({ id: user.id, username: user.email }, "helloNe") 
             console.log(token)
             res.cookie("token", token, ).json(user);      
           } 

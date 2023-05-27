@@ -98,6 +98,21 @@ app.delete('/User/:id', (req, res) => {
     );
 }) 
 
+app.get('/Order',(req, res)=>{
+
+    connection.query("Select Product.name from User,Product WHERE User.id = Product.customer_buy", (err, result) => {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            res.send(result);
+        }
+    });
+
+})
+
+// Select Product.name from User,Product WHERE User.id = Product.customer_buy
+
 // Product --------------------------------------------------------------------------
 app.get('/Product', (req, res) => {
     connection.query("SELECT * FROM Product", (err, result) => {
@@ -154,7 +169,6 @@ app.patch('/update_User_name', (req, res) => {
     }
     );
 }) 
-
 
 
 

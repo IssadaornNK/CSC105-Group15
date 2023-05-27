@@ -76,14 +76,14 @@ app.post('/Create_User', (req, res) => {
     const Password = req.body.password;
 
 
-    connection.query("Register (name, email, password) VALUES(?,?,?)", 
+    connection.query("INSERT INTO User(name, email, password) VALUES(?,?,?)", 
     [Name, Email, Password],
     (err, result) => {
         if (err) {
             console.log(err);
         }
         else {
-            res.send("Values inserted");
+            res.send("Data inserted");
         }
     }
     );

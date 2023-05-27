@@ -5,7 +5,6 @@ import {
 } from 'react-icons/fa';
 import Logo from '../assets/LogoKitsuNe_P.png';
 import { Link } from 'react-router-dom';
-import ContactModal from "./ContactModal";
 
 
 
@@ -90,7 +89,7 @@ const Navbar = () => {
           </Link>
         </li>
 
-        <li className='py-6 text-4xl text-red-600 hover:text-red-800'>
+        <li className='py-6 text-4xl text-[#FF0000] hover:text-[#B90E0A]'>
           {' '}
           <button onClick={logout}>
             Logout
@@ -99,7 +98,6 @@ const Navbar = () => {
 
 
       </ul>
-      <ContactModal onClose={handleOnClose} visible={showMyModal}/>
     </div>
   );
 };

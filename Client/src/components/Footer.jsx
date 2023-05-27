@@ -6,7 +6,7 @@ function Footer() {
   return (
     <footer className="bg-[#333198] flex text-center justify-center text-white p-[rem3]">
       <div className="">
-        <h3 className="font-bold text-4xl my-8">KitsuNe</h3>
+        <h3 className="font-bold text-4xl my-8">FishHub</h3>
         
 
         <ul className="grid grid-cols-2 items-center mb-8">

@@ -1,28 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import axios from "axios";
 
-const ProfileModal = ({ visible, onClose }) => {
+const ProfileModal = ({ user, visible, onClose }) => {
   const handleOnClose = (e) => {
     if (e.target.id === "container") onClose();
   };
 
   if (!visible) return null;
 
-  const [User_Name, setUser_Name] = useState("");
+  const [user_Name, setUser_Name] = useState("");
   
-  const addUser = (event) => {
+  const updateUser = (event) => {
     
     event.preventDefault(); 
     axios
-      .post("http://localhost:3000/update_User_name/:id", {
-        name: User_Name,
-      }).then(() => {
+      .patch("http://localhost:3000/update_User_name", {
+        name: user_Name,
+      }, { withCredentials: true}).then(() => {
         event.target.reset();
-        
+        location.reload()
       })
   };
 
   return (
+
     <div
       id="container"
       onClick={handleOnClose}
@@ -36,7 +37,7 @@ const ProfileModal = ({ visible, onClose }) => {
             <hr className="mt-2 h-1.5 bg-[#333198] border-none w-full" />
           </div>
 
-          <form onSubmit={addUser} className="flex flex-col my-4">
+          <form onSubmit={updateUser} className="flex flex-col my-4">
             <div className="">
               <div className="mb-3">
                 <label
@@ -56,7 +57,6 @@ const ProfileModal = ({ visible, onClose }) => {
             </div>
 
             <button className="text-xl bg-[#333198] hover:bg-[#F18B24] text-white font-bold py-2 px-4 rounded mt-2">
-              {/* onClick={addAACs} */}
               Update name
             </button>
           </form>

@@ -37,7 +37,7 @@ const AdminLogin = () => {
         }
       )
       .then(({ data }) => {
-        navigate("/Admin");
+        navigate("/ProfilePage");
         console.log(data);
       });
     console.log("Email:", email);
@@ -45,7 +45,7 @@ const AdminLogin = () => {
   };
 
   if (document.cookie.includes("token")) {
-    location.href = "/admin";
+    location.href = "/ProfilePage";
   }
 
   return (

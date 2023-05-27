@@ -46,6 +46,19 @@ app.get('/CheckHello', (req, res) => {
     res.send("Hello World!!!!!!!!!!!!!!!")
 })
 
+app.get('/me', (req,res) => {
+    const id = req.cookies['token'];
+    connection.query(`SELECT * FROM User WHERE id = '${id}'`, (err, result) => {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            res.send(result);
+        }
+    });
+})
+
+
 // Routes [endpoint] (Got small endpoint so do all in here) -----------------------------------------------------------------------------
 app.get('/User', (req, res) => {
     connection.query("SELECT * FROM User", (err, result) => {
@@ -99,8 +112,8 @@ app.delete('/User/:id', (req, res) => {
 }) 
 
 app.get('/Order',(req, res)=>{
-
-    connection.query("Select Product.name from User,Product WHERE User.id = Product.customer_buy", (err, result) => {
+    const user = req.body.userId;
+    connection.query(`Select Product.name from Product WHERE customer_buy == ${user}`, (err, result) => {
         if (err) {
             console.log(err);
         }
@@ -112,10 +125,11 @@ app.get('/Order',(req, res)=>{
 })
 
 
-app.patch('/update_User_name/:id', (req, res) => {
+app.patch('/update_User_name', (req, res) => {
     const Name = req.body.name;
-    
-    connection.query("INSERT INTO User (name) VALUE (?) ", 
+    const id = req.cookies['token'];
+    console.log(id)
+    connection.query(`UPDATE User SET name = (?) WHERE id = '${id}'`, 
     [Name],
     (err, result) => {
         if (err) {

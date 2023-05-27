@@ -13,14 +13,14 @@ function ProfilePage() {
   const [showMyModal, setShowMyModal] = useState(false);
   const handleOnClose = () => setShowMyModal(false);
 
-  const getUser = () => {
-    axios.get("http://localhost:3000/User").then((response) => {
-        setUserList(response.data);
+  const getMe = () => {
+    axios.get("http://localhost:3000/me",{ withCredentials: true }).then((response) => {
+        setUser(response.data[0]);
     });
   };
 
   useEffect(() => {
-    getUser();
+    getMe();
   }, []);
 
   function logout(){
@@ -28,7 +28,7 @@ function ProfilePage() {
     location.href = "/login"
   }
 
-  return (
+  return user && (
     <div className="bg-[#fff]">
       <Navbar />
 
@@ -46,14 +46,9 @@ function ProfilePage() {
         />
       </div>
 
-      {userList.filter(p => p.name === 'KitsuNe').map((user) => (
         <div
           key={user.name}
           className=""
-          onClick={() => {
-            setShowMyModal(true);
-            setUser(user);
-          }}
         >
         
         <div className="mt-16 px-24">
@@ -71,7 +66,6 @@ function ProfilePage() {
         </h1>
         </div>
         </div>
-      ))}
 
       <div className="mt-16 px-24">
         <h1 className="flex text-6xl font-semibold mt-8">Order: </h1>
@@ -84,6 +78,15 @@ function ProfilePage() {
           </div>
         </div>
 
+
+        
+
+
+
+
+
+
+
         <div>
           <button className="bg-[#FF0000] hover:bg-[#B90E0A] text-white font-bold px-4 mt-16 my-8 rounded-xl"
           onClick={logout}>
@@ -91,7 +94,7 @@ function ProfilePage() {
           </button>
         </div>
       </div>
-      <ProfileModal onClose={handleOnClose} visible={showMyModal} />
+      <ProfileModal user={user} onClose={handleOnClose} visible={showMyModal} />
       <Footer />
     </div>
   );

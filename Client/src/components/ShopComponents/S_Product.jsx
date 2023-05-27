@@ -26,7 +26,7 @@ function S_Product() {
       </h4>
       <div className="flex flex-row">
         <div className="px-4 flex flex-col">
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 px-14 py-14">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-24 px-14 py-14">
             {ProductList.filter(p => p.type === 'Personal').map((product) => (
               <div
                 key={product.name}
@@ -36,7 +36,7 @@ function S_Product() {
                   setProduct(product)
                 }}
               >
-                <div className="border-4 border-black flex rounded-3xl">
+                <div className="border-4 border-black flex rounded-3xl w-[450px]">
                   <div className="flex overflow-hidden border-4 object-cover border-black my-6 ml-6 rounded-3xl items-center justify-center w-[200px] h-[200px]">
                     <img
                       src={product.image}
@@ -50,10 +50,7 @@ function S_Product() {
                       {product.name}
                     </h3>
                     <div className="text-2xl font-semibold">
-                      {product.price} <br />
-                      <span className="text-2xl font-normal text-[#FF0000]">
-                        {product.price}
-                      </span>
+                      ฿ {product.price}
                     </div>
                     <div className="text-2xl font-normal">{product.kind}</div>
                   </div>
@@ -69,7 +66,7 @@ function S_Product() {
       </h4>
       <div className="flex flex-row">
         <div className="px-4 flex flex-col">
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 px-14 py-14">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-24 px-14 py-14">
             {ProductList.filter(p => p.type === 'Animal').map((product) => (
               <div
                 key={product.name}
@@ -79,7 +76,7 @@ function S_Product() {
                   setProduct(product)
                 }}
               >
-                <div className="border-4 border-black flex rounded-3xl">
+                <div className="border-4 border-black flex rounded-3xl w-[450px]">
                   <div className="flex overflow-hidden border-4 object-cover border-black my-6 ml-6 rounded-3xl items-center justify-center w-[200px] h-[200px]">
                     <img
                       src={product.image}
@@ -109,7 +106,7 @@ function S_Product() {
       </h4>
       <div className="flex flex-row">
         <div className="px-4 flex flex-col">
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 px-14 py-14">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-24 px-14 py-14">
             {ProductList.filter(p => p.type === 'Fertilizer').map((product) => (
               <div
                 key={product.name}
@@ -119,7 +116,7 @@ function S_Product() {
                   setProduct(product)
                 }}
               >
-                <div className="border-4 border-black flex rounded-3xl">
+                <div className="border-4 border-black flex rounded-3xl w-[450px]">
                   <div className="flex overflow-hidden border-4 object-cover border-black my-6 ml-6 rounded-3xl items-center justify-center w-[200px] h-[200px]">
                     <img
                       src={product.image}
@@ -133,10 +130,7 @@ function S_Product() {
                       {product.name}
                     </h3>
                     <div className="text-2xl font-semibold">
-                      {product.price} <br />
-                      <span className="text-2xl font-normal text-[#FF0000]">
-                        {product.price}
-                      </span>
+                      ฿ {product.price}
                     </div>
                     <div className="text-2xl font-normal">{product.kind}</div>
                   </div>

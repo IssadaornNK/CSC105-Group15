@@ -34,25 +34,21 @@ const Navbar = () => {
 
       {/* menu */}
       <ul className='hidden md:flex text-lg'>
-        <li className='hover:text-orange-400'>
+        <li className='hover:text-[#F18B24]'>
           <Link to='/'>
             Home
           </Link>
         </li>
-        <li className='hover:text-orange-400'>
-          <Link to='/AboutPage'>
-            About
+
+        <li className='hover:text-[#F18B24]'>
+          <Link to='/ShopPage'>
+            Shop
           </Link>
         </li>
-        <li className='hover:text-orange-400'>
-          <Link to='/ProjectPage'>
-            Project
+        <li className='hover:text-[#F18B24]'>
+          <Link to='/Login'>
+            Login
           </Link>
-        </li>
-        <li className='hover:text-orange-400'>
-          <button onClick={() => setShowMyModal(true)}>
-            Contact
-          </button>
         </li>
       </ul>
 
@@ -69,38 +65,29 @@ const Navbar = () => {
             : 'fixed top-0 left-0 w-full h-screen bg-[#fff] flex flex-col justify-center items-center origin-bottom duration-500 transform translate-y-0 opacity-100'
         }
       >
-        <li className='py-6 text-4xl hover:text-orange-400'>
+        <li className='py-6 text-4xl hover:text-[#F18B24]'>
           {' '}
           <Link onClick={handleClick} to='/'>
             Home
           </Link>
         </li>
 
-        
 
-        <li className='py-6 text-4xl hover:text-orange-400'>
+
+        <li className='py-6 text-4xl hover:text-[#F18B24]'>
           {' '}
-          <Link onClick={handleClick} to='/AboutPage'>
-            About
+          <Link onClick={handleClick} to='/ShopPage'>
+            Shop
           </Link>
         </li>
 
 
 
-        <li className='py-6 text-4xl hover:text-orange-400'>
+        <li className='py-6 text-4xl hover:text-[#F18B24]'>
           {' '}
-          <Link onClick={handleClick} to='/ProjectPage'>
-            Projects
+          <Link onClick={handleClick} to='/Login'>
+            Login
           </Link>
-        </li>
-
-
-
-        <li className='py-6 text-4xl hover:text-orange-400'>
-          {' '}
-          <button onClick={() => setShowMyModal(true)}>
-            Contact
-          </button>
         </li>
 
         <li className='py-6 text-4xl text-red-600 hover:text-red-800'>

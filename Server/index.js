@@ -110,7 +110,25 @@ app.delete('/User/:id', (req, res) => {
 }) 
 
 
+app.patch('/update_User_name', (req, res) => {
+    const Name = req.body.name;
+    
+    console.log(Name)
 
+
+    connection.query("INSERT INTO User (name) VALUES(?)", 
+    [Name],
+    (err, result) => {
+        if (err) {
+            console.log(err);
+            res.send("error");
+        }
+        else {
+            res.send("Change saved.");
+        }
+    }
+    );
+}) 
 
 
 // Projects --------------------------------------------------------------------------

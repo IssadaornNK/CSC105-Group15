@@ -112,13 +112,10 @@ app.get('/Order',(req, res)=>{
 })
 
 
-app.patch('/update_User_name', (req, res) => {
+app.patch('/update_User_name/:id', (req, res) => {
     const Name = req.body.name;
     
-    console.log(Name)
-
-
-    connection.query("INSERT INTO User (name) VALUES(?)", 
+    connection.query("INSERT INTO User (name) VALUE (?) ", 
     [Name],
     (err, result) => {
         if (err) {

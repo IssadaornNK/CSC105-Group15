@@ -15,7 +15,7 @@ authRouter.post('/User', async (req, res) => {
             res.send('User not found!')  
           }else{
             const [ user ] = result;
-            const token = await jwt.sign({ id: user.id, username: user.email }, "helloNe") 
+            const token = await jwt.sign({ id: user.id, email: user.email }, "helloNe") 
             console.log(token)
             res.cookie("token", token, ).json(user);      
           } 

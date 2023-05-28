@@ -21,12 +21,12 @@ function S_Product() {
 
   return (
     <div className="pl-24 flex flex-col justify-start">
-      <h4 className="mt-8 px-5 lg:text-8xl font-medium text-black border-l-[20px] border-[#333198] py-4">
+      <h4 className="mt-8 md:px-5 text-4xl md:text-8xl font-medium text-black border-l-[20px] border-[#333198] py-4">
         Personal Products
       </h4>
       <div className="flex flex-row">
-        <div className="px-4 flex flex-col">
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-24 px-14 py-14">
+        <div className="md:px-4 flex flex-col">
+          <div className="grid md:grid-cols-3 grid-cols-1 gap-24 px-14 py-14">
             {ProductList.filter(p => p.type === 'Personal').map((product) => (
               <div
                 key={product.name}
@@ -36,7 +36,7 @@ function S_Product() {
                   setProduct(product)
                 }}
               >
-                <div className="border-8 border-black flex rounded-3xl w-[450px]">
+                <div className="border-8 border-black flex rounded-3xl md:w-[450px] w-[250]">
                   <div className="flex overflow-hidden border-4 object-cover border-black my-6 ml-6 rounded-3xl items-center justify-center w-[200px] h-[200px]">
                     <img
                       src={product.image}
@@ -46,13 +46,13 @@ function S_Product() {
                   </div>
 
                   <div className="m-8">
-                    <h3 className="text-[#333198] text-4xl font-bold">
+                    <h3 className="text-[#333198] text-2xl md:text-4xl font-bold">
                       {product.name}
                     </h3>
-                    <div className="text-2xl font-semibold">
+                    <div className="text-xl md:text-2xl font-semibold">
                       ฿ {product.price}
                     </div>
-                    <div className="text-2xl font-semibold">
+                    <div className="text-xl md:text-2xl font-semibold">
                       {product.description}
                     </div>
                   </div>
@@ -63,12 +63,12 @@ function S_Product() {
         </div>
       </div>
       {/* -------------------------------------------------------------- */}
-      <h4 className="mt-8 px-5 lg:text-8xl font-medium text-black border-l-[20px] border-[#333198] py-4">
+      <h4 className="mt-8 md:px-5 text-4xl md:text-8xl font-medium text-black border-l-[20px] border-[#333198] py-4">
         Animal's Products
       </h4>
       <div className="flex flex-row">
-        <div className="px-4 flex flex-col">
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-24 px-14 py-14">
+        <div className="md:px-4 flex flex-col">
+          <div className="grid md:grid-cols-3 grid-cols-1 gap-24 py-14">
             {ProductList.filter(p => p.type === 'Animal').map((product) => (
               <div
                 key={product.name}
@@ -78,7 +78,7 @@ function S_Product() {
                   setProduct(product)
                 }}
               >
-                <div className="border-8 border-black flex rounded-3xl w-[450px]">
+                <div className="border-8 border-black flex rounded-3xl md:w-[450px] w-[250]">
                   <div className="flex overflow-hidden border-4 object-cover border-black my-6 ml-6 rounded-3xl items-center justify-center w-[200px] h-[200px]">
                     <img
                       src={product.image}
@@ -88,13 +88,13 @@ function S_Product() {
                   </div>
 
                   <div className="m-8">
-                    <h3 className="text-[#333198] text-4xl font-bold">
+                    <h3 className="text-[#333198] text-2xl md:text-4xl font-bold">
                       {product.name}
                     </h3>
-                    <div className="text-2xl font-semibold">
+                    <div className="text-xl md:text-2xl font-semibold">
                       ฿ {product.price}
                     </div>
-                    <div className="text-2xl font-semibold">
+                    <div className="text-xl md:text-2xl font-semibold">
                       {product.description}
                     </div>
                   </div>
@@ -106,12 +106,12 @@ function S_Product() {
       </div>
 
       {/* -------------------------------------------------------------- */}
-      <h4 className="mt-8 px-5 lg:text-8xl font-medium text-black border-l-[20px] border-[#333198] py-4">
+      <h4 className="mt-8 md:px-5 text-4xl md:text-8xl font-medium text-black border-l-[20px] border-[#333198] py-4">
         Fertilizer
       </h4>
       <div className="flex flex-row">
-        <div className="px-4 flex flex-col">
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-24 px-14 py-14">
+        <div className="md:px-4 flex flex-col">
+          <div className="grid md:grid-cols-3 grid-cols-1 gap-24 px-14 py-14">
             {ProductList.filter(p => p.type === 'Fertilizer').map((product) => (
               <div
                 key={product.name}
@@ -121,7 +121,7 @@ function S_Product() {
                   setProduct(product)
                 }}
               >
-                <div className="border-8 border-black flex rounded-3xl w-[450px] h-[262px]">
+                <div className="border-8 border-black flex rounded-3xl md:w-[450px] w-[250]">
                   <div className="flex overflow-hidden border-4 object-cover border-black my-6 ml-6 rounded-3xl items-center justify-center w-[200px] h-[200px]">
                     <img
                       src={product.image}
@@ -131,13 +131,13 @@ function S_Product() {
                   </div>
 
                   <div className="m-8">
-                    <h3 className="text-[#333198] text-4xl font-bold">
+                    <h3 className="text-[#333198] text-xl md:text-4xl font-bold">
                       {product.name}
                     </h3>
-                    <div className="text-2xl font-semibold">
+                    <div className="text-xl md:text-2xl font-semibold">
                       ฿ {product.price}
                     </div>
-                    <div className="text-2xl font-semibold">
+                    <div className="text-xl md:text-2xl font-semibold">
                       {product.description}
                     </div>
                   </div>

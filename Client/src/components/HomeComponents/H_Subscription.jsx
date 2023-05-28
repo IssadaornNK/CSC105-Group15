@@ -6,8 +6,8 @@ import MarketFishH from "../../assets/MarketFishH.jpg";
 const Skills = () => {
   return (
     <div className=" bg-[#fff] text-black ">
-      <div className="flex flex-col justify-center items-center">
-        <div className="grid grid-cols-2 gap-16 px-32 md:my-40">
+      <div className="flex flex-col justify-center items-center mt-[200px]">
+        <div className="grid md:grid-cols-2 grid-cols-1 md:gap-16 gap-2 md:px-32 px-2 md:my-40">
           <div>
             <div className="pb-8">
               <p className="text-6xl font-bold inline border-b-4 border-[#333198]">
@@ -37,7 +37,7 @@ const Skills = () => {
                     className="text-black group border-4  px-6 py-3 my-2 flex items-center 
                   border-black hover:bg-[#F18B24] rounded-3xl"
                   >
-                    <Link to="/">Sign up</Link>
+                    <Link to="/Login">Sign up</Link>
                   </button>
                 </div>
 
@@ -52,7 +52,7 @@ const Skills = () => {
           
 
 
-            <div className="bg-[#FAD77B] rounded-3xl border-8 border-black">
+            <div className="bg-[#FAD77B] rounded-3xl border-8 border-black mb-[30px]">
               <div className="m-8 ">
                 <div className="text-3xl font-bold mb-4">Continously Subsciption</div>
                 <div className="text-2xl">
@@ -66,7 +66,7 @@ const Skills = () => {
                     className="text-black group border-4  px-6 py-3 my-2 flex items-center 
                   border-black hover:bg-[#F18B24] rounded-3xl"
                   >
-                    <Link to="/">Subscribe</Link>
+                    <Link to="/Login">Subscribe</Link>
                   </button>
                 </div>
 

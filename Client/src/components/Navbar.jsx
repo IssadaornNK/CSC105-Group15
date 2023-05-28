@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import Logo from "../assets/LogoKitsuNe_P.png";
 import { Link } from "react-router-dom";
 import ProfileIcon from "./ProfileIcon";
 

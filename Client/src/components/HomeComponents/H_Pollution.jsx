@@ -4,7 +4,7 @@ import TorF from "../../assets/TorF.jpg";
 const H_Pollution = () => {
   return (
     <div
-      className="flex justify-center h-screen bg-center mb-[80px]"
+      className="flex justify-center h-screen bg-center"
       style={{
         backgroundImage: `url(${TorF})`,
         marginTop: "0px",

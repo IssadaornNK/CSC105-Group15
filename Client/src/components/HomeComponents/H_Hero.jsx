@@ -16,10 +16,10 @@ const Home = () => {
       {/* Container */}
       <div className="px-8 items-center flex flex-col justify-center">
         <h1 className="text-6xl md:text-8xl font-bold text-[#fff] item-center">
-          Preserve the Sea
+          Make the MOST benefit
         </h1>
         <h1 className="text-6xl md:text-8xl font-bold text-[#fff] item-center mt-16">
-          Stop the Overfishing Spree!
+          of Fish-wasted from Overfishing
         </h1>
       </div>
     </div>

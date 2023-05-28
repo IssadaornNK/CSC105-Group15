@@ -21,7 +21,7 @@ function S_Product() {
 
   return (
     <div className="pl-24 flex flex-col justify-start">
-      <h4 className="mt-8 px-5 text-8xl font-medium text-black border-l-[20px] border-[#333198] py-4">
+      <h4 className="mt-8 px-5 lg:text-8xl font-medium text-black border-l-[20px] border-[#333198] py-4">
         Personal Products
       </h4>
       <div className="flex flex-row">
@@ -61,7 +61,7 @@ function S_Product() {
         </div>
       </div>
       {/* -------------------------------------------------------------- */}
-      <h4 className="mt-8 px-5 text-8xl font-medium text-black border-l-[20px] border-[#333198] py-4">
+      <h4 className="mt-8 px-5 lg:text-8xl font-medium text-black border-l-[20px] border-[#333198] py-4">
         Animal's Products
       </h4>
       <div className="flex flex-row">
@@ -101,7 +101,7 @@ function S_Product() {
       </div>
 
       {/* -------------------------------------------------------------- */}
-      <h4 className="mt-8 px-5 text-8xl font-medium text-black border-l-[20px] border-[#333198] py-4">
+      <h4 className="mt-8 px-5 lg:text-8xl font-medium text-black border-l-[20px] border-[#333198] py-4">
         Fertilizer
       </h4>
       <div className="flex flex-row">

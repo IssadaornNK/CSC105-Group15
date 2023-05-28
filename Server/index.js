@@ -125,9 +125,9 @@ app.delete('/selfDelete', (req, res) => {
   
 
 app.get('/Order/:userId',(req, res)=>{
+    console.log(req.params.userId);
     const user = req.params.userId;
-    connection.query(`select *
-    from Product inner join ${Order} on Product.id = ${Order}.ProductId where Owner = 1;`, (err, result) => {
+    connection.query(`SELECT * FROM \`Order\` as o join Product P ON P.id = o.ProductId join User U on U.id = o.Owner where Owner = ${user}`, (err, result) => {
         if (err) {
             console.log(err);
         }
@@ -138,10 +138,10 @@ app.get('/Order/:userId',(req, res)=>{
 
 })
 
-app.get('/buy/:userId',(req, res)=>{
+app.post('/buy/:userId',(req, res)=>{
+    console.log(req.params.userId);
     const user = req.params.userId;
-    connection.query(`select *
-    from Product inner join ${Order} on Product.id = ${Order}.ProductId where Owner = 1;`, (err, result) => {
+    connection.query(`INSERT INTO Order (Owner, ProductId) `, (err, result) => {
         if (err) {
             console.log(err);
         }

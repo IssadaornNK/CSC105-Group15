@@ -3,9 +3,8 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import axios from "axios";
 import Admin_Waifu from "../assets/Admin_Waifu.jfif";
-import CSS from "../assets/css.png";
 import ProfileModal from "../components/ProfileModal";
-import Swal from 'sweetalert2'
+import Swal from "sweetalert2";
 
 function ProfilePage() {
   const [userList, setUserList] = useState([]);
@@ -26,9 +25,9 @@ function ProfilePage() {
     getMe();
   }, []);
 
-
   function remove(id) {
-    axios.delete(`http://localhost:3000/selfDelete?id=${id}`)
+    axios
+      .delete(`http://localhost:3000/selfDelete?id=${id}`)
       .then(({ data }) => {
         getMe();
         Swal.fire({
@@ -37,11 +36,32 @@ function ProfilePage() {
         });
       });
   }
-  
+
   function logout() {
     document.cookie = "token=;max-age=0";
     location.href = "/";
   }
+
+  const [orderList, setOrderList] = useState([]);
+  const [order, setOrder] = useState(null);
+
+  function getCookie(key) {
+    var b = document.cookie.match("(^|;)\\s*" + key + "\\s*=\\s*([^;]+)");
+    return b ? b.pop() : "";
+  }
+
+  const getOrder = () => {
+    axios
+      .get("http://localhost:3000/Order/" + getCookie("token"))
+      .then((response) => {
+        console.log(response.data);
+        setOrderList(response.data);
+      });
+  };
+
+  useEffect(() => {
+    getOrder();
+  }, []);
 
   return (
     user && (
@@ -81,14 +101,37 @@ function ProfilePage() {
         </div>
 
         <div className="mt-16 px-14 md:px-24">
-          <h1 className="flex text-2xl md:text-4xl font-semibold mt-4">Order: </h1>
-
-          <div className="mx-auto p-4 flex flex-col justify-center w-full h-full">
-            <div className="shadow-2xl shadow-[#FAD77B] bg-[#fff] hover:scale-110 duration-500 rounded-2xl text-center w-48 md:w-96 mt-8">
-              <img className="w-20 mx-auto" src={CSS} alt="CSS icon" />
-              <h1 className="my-4 mt-8 text-xl md:text-3xl text-black font-semibold ">
-                ------
-              </h1>
+          <h1 className="flex text-2xl md:text-4xl font-semibold mt-4">
+            Order:{" "}
+          </h1>
+          {/* //////////////////////////////////////////////// */}
+          <div className="p-4 flex">
+            <div className="flex flex-col items-center shadow-2xl shadow-[#FAD77B] bg-[#fff] 
+            hover:scale-110 duration-500 rounded-2xl text-center h-40 md:h-64 w-40 md:w-64 mt-8">
+              {orderList.map((order) => (
+                <div
+                  key={order.name}
+                  className="flex flex-col justify-center"
+                  onClick={() => {
+                    setShowMyModal(true);
+                    setOrder(order);
+                  }}
+                >
+                  <div className="flex items-center bg-[#fff] hover:scale-105 duration-500 rounded-2xl w-[100px]">
+                    <img
+                      src={order.image}
+                      alt="fox"
+                      style={{ height: "100%" }}
+                      className=""
+                    />
+                  </div>
+                  <div className="m-8">
+                      <h3 className="text-[#333198] text-xl md:text-4xl font-bold text-center">
+                        {order.name}
+                      </h3>
+                    </div>
+                </div>
+              ))}
             </div>
           </div>
 
@@ -99,13 +142,11 @@ function ProfilePage() {
                 remove(user.id);
                 logout();
               }}
-              
             >
               <div className="p-2 py-4 text-xl md:text-3xl">Delete account</div>
             </button>
           </div>
         </div>
-        
 
         <ProfileModal
           user={user}

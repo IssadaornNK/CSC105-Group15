@@ -4,6 +4,9 @@ import axios from "axios";
 const ProductModal = ({ visible, onClose, product }) => {
   const [quantity, setQuantity] = useState(1);
 
+  const [userId, setuserId] = useState("");
+  const [productId, setproductId] = useState("");
+
   const handleIncrement = () => {
     setQuantity(quantity + 1);
   };
@@ -20,15 +23,42 @@ const ProductModal = ({ visible, onClose, product }) => {
 
   if (!visible) return null;
 
+  function getCookie(key) {
+    var b = document.cookie.match("(^|;)\\s*" + key + "\\s*=\\s*([^;]+)");
+    return b ? b.pop() : "";
+  }
 
 
-
-
-  const handleBuyNow = () => {
+  const handleBuyNow = (event) => {
     const hasCookies = document.cookie.includes("token");
     if (hasCookies) {
       // Proceed with the buy action
+      event.preventDefault();
+  
+      // TODO: Perform login authentication here
+      axios
+        .post(
+          "http://localhost:3000/buy/" + getCookie("token"),
+          {
+            userId: parseInt(getCookie("token")),
+            productId: product.id,
+          },
+          {
+            withCredentials: true,
+          }
+        )
+        .then(({ data }) => {
+          console.log(data);
+          // Redirect to the desired URL
+          window.location.href = "/ProfilePage";
+        })
+        .catch((error) => {
+          console.log(error);
+          // Handle any error that occurred during the login process
+        });
       
+      console.log("UserId: ", userId);
+      console.log("ProductId: ", productId);
     } else {
       // Redirect to the login page
       window.location.href = "/login";

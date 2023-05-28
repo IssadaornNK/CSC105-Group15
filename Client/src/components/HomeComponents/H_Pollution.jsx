@@ -7,7 +7,7 @@ const H_Pollution = () => {
       className="flex justify-center h-screen bg-center"
       style={{
         backgroundImage: `url(${TorF})`,
-        marginTop: "100px",
+        marginTop: "0px",
         backgroundColor: "black",
         backgroundPosition: "center",
         backgroundSize: "cover",
@@ -15,8 +15,8 @@ const H_Pollution = () => {
     >
       {/* Container */}
       <div className=" items-center flex flex-col justify-center">
-        <div className="grid lg:grid-cols-2 lg:gap-24 md:gap-0 sm:gap-18 lg:px-64 my-56 ">
-          <h1 className="lg:text-[300px] md:text-[220px] sm:text-[200px] xs:text-[64px] font-bold text-red-500 items-center ">
+        <div className="grid lg:gap-24 md:gap-0 sm:gap-18 lg:px-64 my-56 ">
+          <h1 className="lg:text-[300px] md:text-[220px] sm:text-[200px] xs:text-[100px] font-bold text-red-500 items-center ">
             40%
           </h1>
           <div className="justify-center items-start flex flex-col ">

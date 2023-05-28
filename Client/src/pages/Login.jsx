@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import BG_WaifuKitsune from "../assets/BG_WaifuKitsune.jfif";
+import SEA_Login from "../assets/SEA_Login.png";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import RegisterModal from "../components/RegisterModal";
@@ -51,7 +51,7 @@ const AdminLogin = () => {
   return (
     <div
       className="flex justify-end h-screen bg-cover bg-center"
-      style={{ backgroundImage: `url(${BG_WaifuKitsune})` }}
+      style={{ backgroundImage: `url(${SEA_Login})` }}
     >
       {/* Login */}
       <div className="w-1/3 px-16 flex flex-col justify-center h-full bg-white">

@@ -48,7 +48,7 @@ app.get('/CheckHello', (req, res) => {
 
 app.get('/me', (req,res) => {
     const id = req.cookies['token'];
-    connection.query(`SELECT * FROM User WHERE id = '${id}'`, (err, result) => {
+    connection.query(`SELECT name, email FROM User WHERE id = '${id}'`, (err, result) => {
         if (err) {
             console.log(err);
         }
@@ -67,6 +67,7 @@ app.get('/User', (req, res) => {
         }
         else {
             res.send(result);
+
         }
     });
 })
@@ -125,7 +126,22 @@ app.delete('/selfDelete', (req, res) => {
 
 app.get('/Order/:userId',(req, res)=>{
     const user = req.params.userId;
-    connection.query(`Select Product.name from Product WHERE customer_buy = ${user}`, (err, result) => {
+    connection.query(`select *
+    from Product inner join ${Order} on Product.id = ${Order}.ProductId where Owner = 1;`, (err, result) => {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            res.send(result);
+        }
+    });
+
+})
+
+app.get('/buy/:userId',(req, res)=>{
+    const user = req.params.userId;
+    connection.query(`select *
+    from Product inner join ${Order} on Product.id = ${Order}.ProductId where Owner = 1;`, (err, result) => {
         if (err) {
             console.log(err);
         }

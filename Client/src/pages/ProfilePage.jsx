@@ -87,7 +87,7 @@ function ProfilePage() {
             <div className="shadow-2xl shadow-[#FAD77B] bg-[#fff] hover:scale-110 duration-500 rounded-2xl text-center w-48 md:w-96 mt-8">
               <img className="w-20 mx-auto" src={CSS} alt="CSS icon" />
               <h1 className="my-4 mt-8 text-xl md:text-3xl text-black font-semibold ">
-                CSS
+                ------
               </h1>
             </div>
           </div>

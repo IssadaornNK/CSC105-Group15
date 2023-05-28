@@ -52,7 +52,9 @@ function S_Product() {
                     <div className="text-2xl font-semibold">
                       ฿ {product.price}
                     </div>
-                    <div className="text-2xl font-normal">{product.kind}</div>
+                    <div className="text-2xl font-semibold">
+                      {product.description}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -91,6 +93,9 @@ function S_Product() {
                     </h3>
                     <div className="text-2xl font-semibold">
                       ฿ {product.price}
+                    </div>
+                    <div className="text-2xl font-semibold">
+                      {product.description}
                     </div>
                   </div>
                 </div>
@@ -132,7 +137,9 @@ function S_Product() {
                     <div className="text-2xl font-semibold">
                       ฿ {product.price}
                     </div>
-                    <div className="text-2xl font-normal">{product.kind}</div>
+                    <div className="text-2xl font-semibold">
+                      {product.description}
+                    </div>
                   </div>
                 </div>
               </div>

@@ -123,9 +123,9 @@ app.delete('/selfDelete', (req, res) => {
   });
   
 
-app.get('/Order',(req, res)=>{
-    const user = req.body.userId;
-    connection.query(`Select Product.name from Product WHERE customer_buy == ${user}`, (err, result) => {
+app.get('/Order/:userId',(req, res)=>{
+    const user = req.params.userId;
+    connection.query(`Select Product.name from Product WHERE customer_buy = ${user}`, (err, result) => {
         if (err) {
             console.log(err);
         }

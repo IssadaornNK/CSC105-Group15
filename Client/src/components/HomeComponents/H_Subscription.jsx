@@ -15,9 +15,11 @@ const Skills = () => {
               </p>
             </div>
             <p className="lg:text-4xl">
-              A highly motivated first-year computer science student seeking an
-              opportunity to apply my knowledge and gain hands-on experience in
-              the field.
+            We believe that together, we can make a significant impact on the future of our oceans. 
+            Join us on this journey towards sustainable fishing practices, marine conservation, 
+            and the preservation of fish stocks. Download the Overfishing App today and become part 
+            of the movement to safeguard our precious marine ecosystems for generations to come.
+
             </p>
           </div>
           <div className="grid md:grid-cols-2 sm:grid-cols-2 lg:gap-24">

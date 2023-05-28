@@ -59,7 +59,7 @@ const Skills = () => {
                   Recommended for company and individuals who want us to provide our product every month
                 </div>
               </div>
-              <div className="mt-10 font-bold text-3xl m-6">&99/Month</div>
+              <div className="mt-10 font-bold text-3xl m-6">฿99/Month</div>
               <div className="m-8">
                 <div className="mt-6 text-2xl flex justify-center font-semibold">
                   <button

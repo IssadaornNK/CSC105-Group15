@@ -116,7 +116,7 @@ function ProfilePage() {
                   setOrder(order)
                 }}
               >
-                <div className="border-8 border-black flex rounded-3xl md:w-[450px] w-[250]">
+                <div className="border-8 border-black flex rounded-3xl md:w-[275px] w-[250]">
                   <div className="flex overflow-hidden border-4 object-cover border-black my-6 ml-6 rounded-3xl items-center justify-center w-[200px] h-[200px]">
                     <img
                       src={order.image}
@@ -125,12 +125,7 @@ function ProfilePage() {
                     />
                   </div>
 
-                  <div className="m-8">
-                    <h3 className="text-[#333198] text-xl md:text-4xl font-bold">
-                      {order.name}
-                    </h3>
-
-                  </div>
+                  
                 </div>
               </div>
             ))}

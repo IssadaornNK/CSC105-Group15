@@ -138,19 +138,22 @@ app.get('/Order/:userId',(req, res)=>{
 
 })
 
-app.post('/buy/:userId',(req, res)=>{
+app.post('/buy/:userId', (req, res) => {
     console.log(req.params.userId);
     const user = req.params.userId;
-    connection.query(`INSERT INTO Order (Owner, ProductId) `, (err, result) => {
+    connection.query(
+      `INSERT INTO \`Order\` (Owner, ProductId) VALUES (?, ?)`,
+      [user, req.body.productId],
+      (err, result) => {
         if (err) {
-            console.log(err);
+          console.log(err);
+        } else {
+          res.send(result);
         }
-        else {
-            res.send(result);
-        }
-    });
-
-})
+      }
+    );
+  });
+  
 
 
 app.patch('/update_User_name', (req, res) => {

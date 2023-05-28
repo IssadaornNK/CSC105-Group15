@@ -105,35 +105,38 @@ function ProfilePage() {
             Order:{" "}
           </h1>
           {/* //////////////////////////////////////////////// */}
-          <div className="p-4 flex">
-            <div className="flex flex-col items-center shadow-2xl shadow-[#FAD77B] bg-[#fff] 
-            hover:scale-110 duration-500 rounded-2xl text-center h-40 md:h-64 w-40 md:w-64 mt-8">
-              {orderList.map((order) => (
-                <div
-                  key={order.name}
-                  className="flex flex-col justify-center"
-                  onClick={() => {
-                    setShowMyModal(true);
-                    setOrder(order);
-                  }}
-                >
-                  <div className="flex items-center bg-[#fff] hover:scale-105 duration-500 rounded-2xl w-[100px]">
+          <div className="flex flex-row">
+        <div className="md:px-4 flex flex-col">
+          <div className="grid md:grid-cols-3 grid-cols-1 gap-24 px-14 py-14">
+            {orderList.map((order) => (
+              <div
+                key={order.name}
+                className="flex hover:scale-105 duration-500 justify-center"
+                onClick={() => {
+                  setOrder(order)
+                }}
+              >
+                <div className="border-8 border-black flex rounded-3xl md:w-[450px] w-[250]">
+                  <div className="flex overflow-hidden border-4 object-cover border-black my-6 ml-6 rounded-3xl items-center justify-center w-[200px] h-[200px]">
                     <img
                       src={order.image}
                       alt="fox"
                       style={{ height: "100%" }}
-                      className=""
                     />
                   </div>
+
                   <div className="m-8">
-                      <h3 className="text-[#333198] text-xl md:text-4xl font-bold text-center">
-                        {order.name}
-                      </h3>
-                    </div>
+                    <h3 className="text-[#333198] text-xl md:text-4xl font-bold">
+                      {order.name}
+                    </h3>
+
+                  </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
+        </div>
+      </div>
 
           <div>
             <button

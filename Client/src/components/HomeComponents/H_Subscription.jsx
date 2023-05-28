@@ -7,14 +7,14 @@ const Skills = () => {
   return (
     <div className=" bg-[#fff] text-black ">
       <div className="flex flex-col justify-center items-center">
-        <div className="grid md:sm:grid-cols-2 sm:grid-cols-2 lg:gap-32 lg:px-56 lg:my-80 md:my-32 sm:my-6 xs:my-6">
+        <div className="grid grid-cols-2 gap-16 px-32 md:my-40">
           <div>
-            <div className="lg:pb-8">
-              <p className=" lg:text-6xl font-bold inline border-b-4 border-[#333198]">
+            <div className="pb-8">
+              <p className="text-6xl font-bold inline border-b-4 border-[#333198]">
                 Subscription
               </p>
             </div>
-            <p className="lg:text-4xl">
+            <p className="text-3xl">
             We believe that together, we can make a significant impact on the future of our oceans. 
             Join us on this journey towards sustainable fishing practices, marine conservation, 
             and the preservation of fish stocks. Download the Overfishing App today and become part 
@@ -22,54 +22,57 @@ const Skills = () => {
 
             </p>
           </div>
-          <div className="grid md:grid-cols-2 sm:grid-cols-2 lg:gap-24">
+          <div className="grid md:grid-cols-2 gap-12">
             <div className="bg-[#fff] rounded-3xl border-8 border-black">
-              <div className="m-8">
-                <div className="lg:text-4xl font-bold">Start with Free Plan</div>
-                <div className="lg:text-3xl">
-                  For individuals just getting started with NAME
+              <div className="m-8 ">
+                <div className="text-3xl font-bold mb-4">Start with Free Plan</div>
+                <div className="text-2xl">
+                  For individuals just getting started with FishHub
                 </div>
               </div>
-              <div className="mt-10 font-bold text-5xl m-6">Free</div>
+              <div className="mt-10 font-bold text-3xl m-6">Free</div>
               <div className="m-8">
-                <div className="mt-6 text-3xl flex justify-center font-semibold">
+                <div className="mt-6 text-2xl flex justify-center font-semibold">
                   <button
-                    className="text-black group border-4 lg:px-20 py-3 my-2 flex items-center 
+                    className="text-black group border-4  px-6 py-3 my-2 flex items-center 
                   border-black hover:bg-[#F18B24] rounded-3xl"
                   >
-                    <Link to="/ProjectPage">Sign up</Link>
+                    <Link to="/">Sign up</Link>
                   </button>
                 </div>
 
-                <div className="mt-6 lg:text-2xl">
-                  <div className="lg:text-3xl font-medium ">Free includes:</div>
-                  <div className="lg:text-2xl ml-4">
+                <div className="mt-6 text-2xl">
+                  <div className="text-2xl font-medium ">Free includes:</div>
+                  <div className="text-xl ml-4">
                     Choose your product on your own.
                   </div>
                 </div>
               </div>
             </div>
+          
+
+
             <div className="bg-[#FAD77B] rounded-3xl border-8 border-black">
-              <div className="m-8">
-                <div className="lg:text-4xl font-bold">Continously Subscription</div>
-                <div className="lg:text-3xl">
+              <div className="m-8 ">
+                <div className="text-3xl font-bold mb-4">Continously Subsciption</div>
+                <div className="text-2xl">
                   Recommended for company and individuals who want us to provide our product every month
                 </div>
               </div>
-              <div className="mt-10 font-bold text-5xl  m-6">฿99/Month</div>
+              <div className="mt-10 font-bold text-3xl m-6">&99/Month</div>
               <div className="m-8">
-                <div className="mt-6 text-3xl flex justify-center font-semibold">
+                <div className="mt-6 text-2xl flex justify-center font-semibold">
                   <button
-                    className="text-black group border-4 lg:px-22 py-4 my-3 flex items-center 
+                    className="text-black group border-4  px-6 py-3 my-2 flex items-center 
                   border-black hover:bg-[#F18B24] rounded-3xl"
                   >
-                    <Link to="/ProjectPage">Subscribe</Link>
+                    <Link to="/">Subscribe</Link>
                   </button>
                 </div>
 
-                <div className="mt-6 lg:text-2xl">
-                  <div className="lg:text-3xl font-medium ">Previledge:</div>
-                  <div className="lg:text-2xl ml-4">
+                <div className="mt-6 text-2xl">
+                  <div className="text-2xl font-medium ">Previledge:</div>
+                  <div className="text-xl ml-4">
                     Custom a product and delivery date as you wish and reduce more pollution with us.
                   </div>
                 </div>

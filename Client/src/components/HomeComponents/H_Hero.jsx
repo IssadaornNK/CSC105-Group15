@@ -15,10 +15,10 @@ const Home = () => {
     >
       {/* Container */}
       <div className="px-8 items-center flex flex-col justify-center">
-        <h1 className="text-6xl md:text-8xl font-bold text-[#fff] item-center">
+        <h1 className="text-6xl md:text-7xl font-bold text-[#fff] item-center">
           Make the MOST benefit
         </h1>
-        <h1 className="text-6xl md:text-8xl font-bold text-[#fff] item-center mt-16">
+        <h1 className="text-6xl md:text-7xl font-bold text-[#fff] item-center mt-16">
           of Fish-wasted from Overfishing
         </h1>
       </div>

@@ -21,7 +21,7 @@ const ProductModal = ({ visible, onClose, product }) => {
   if (!visible) return null;
 
 
-  
+
 
 
   const handleBuyNow = () => {
@@ -45,13 +45,13 @@ const ProductModal = ({ visible, onClose, product }) => {
     flex justify-center items-center"
     >
       <div className="w-[1000px] flex flex-col">
-        <div className="bg-white">
+        <div className="bg-white border-8 border-black">
           <div className="flex flex-col">
             <div className="flex flex-col">
               <div className="">
                 <div className="flex justify-start">
                   <div className="flex rounded-3xl">
-                    <div className="flex overflow-hidden border-4 object-cover border-black items-center justify-center w-[500px] h-[500px]">
+                    <div className="flex overflow-hidden border-r-8 object-cover border-black items-center justify-center w-[500px] h-[500px]">
                       <img
                         src={product.image}
                         alt="fox"

@@ -96,7 +96,7 @@ const RegisterModal = ({ visible, onClose }) => {
 
             <button className="text-xl bg-[#333198] hover:bg-[#F18B24] text-white font-bold py-2 px-4 rounded mt-2">
               {/* onClick={addAACs} */}
-              Add A&A&C
+              Submit
             </button>
           </form>
         </div>

@@ -36,7 +36,7 @@ function S_Product() {
                   setProduct(product)
                 }}
               >
-                <div className="border-4 border-black flex rounded-3xl w-[450px]">
+                <div className="border-8 border-black flex rounded-3xl w-[450px]">
                   <div className="flex overflow-hidden border-4 object-cover border-black my-6 ml-6 rounded-3xl items-center justify-center w-[200px] h-[200px]">
                     <img
                       src={product.image}
@@ -78,7 +78,7 @@ function S_Product() {
                   setProduct(product)
                 }}
               >
-                <div className="border-4 border-black flex rounded-3xl w-[450px]">
+                <div className="border-8 border-black flex rounded-3xl w-[450px]">
                   <div className="flex overflow-hidden border-4 object-cover border-black my-6 ml-6 rounded-3xl items-center justify-center w-[200px] h-[200px]">
                     <img
                       src={product.image}
@@ -121,7 +121,7 @@ function S_Product() {
                   setProduct(product)
                 }}
               >
-                <div className="border-4 border-black flex rounded-3xl w-[450px]">
+                <div className="border-8 border-black flex rounded-3xl w-[450px] h-[262px]">
                   <div className="flex overflow-hidden border-4 object-cover border-black my-6 ml-6 rounded-3xl items-center justify-center w-[200px] h-[200px]">
                     <img
                       src={product.image}

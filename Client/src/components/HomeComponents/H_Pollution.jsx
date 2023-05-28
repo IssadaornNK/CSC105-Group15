@@ -4,7 +4,7 @@ import TorF from "../../assets/TorF.jpg";
 const H_Pollution = () => {
   return (
     <div
-      className="flex justify-center h-screen bg-center"
+      className="flex justify-center h-screen bg-center mb-[80px]"
       style={{
         backgroundImage: `url(${TorF})`,
         marginTop: "0px",
@@ -15,13 +15,13 @@ const H_Pollution = () => {
     >
       {/* Container */}
       <div className=" items-center flex flex-col justify-center">
-        <div className="grid lg:gap-24 md:gap-0 sm:gap-18 lg:px-64 my-56 ">
-          <h1 className="lg:text-[300px] md:text-[220px] sm:text-[200px] xs:text-[100px] font-bold text-red-500 items-center ">
+        <div className="grid px-64 my-56 ">
+          <h1 className="md:text-[220px] text-[120px] font-bold text-red-500 items-center ">
             40%
           </h1>
-          <div className="justify-center items-start flex flex-col ">
-            <h1 className="lg:text-[150px] md:text-[80px] sm:text-[75px] xs:text-[48px] font-bold text-[#fff] ">pollution</h1>
-            <h1 className="lg:text-[150px] md:text-[80px] sm:text-[75px] xs:text-[48px] font-bold text-[#fff] ">reduce</h1>
+          <div className="justify-center items-center flex flex-col ">
+            <h1 className="md:text-[80px] text-[50px] font-bold text-[#fff] text-center ">pollution</h1>
+            <h1 className="md:text-[80px] text-[50px] font-bold text-[#fff] items-center ">reduce</h1>
           </div>
         </div>
       </div>
